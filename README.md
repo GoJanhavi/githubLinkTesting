@@ -84,7 +84,7 @@ Setting up AWS EC2 Instance:
     
 --refer files ""server.py" and "testProject.sh" for aws part.
 
-###Collaborators: ###
+##### **Collaborators**
     Janhavi Gokhale 
     Shriyash Mahajan
  
