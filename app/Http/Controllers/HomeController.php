@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use GuzzleHttp\Client;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\DocBlock\Tags\Property;
 
 class HomeController extends Controller
 {
@@ -28,6 +29,7 @@ class HomeController extends Controller
 
     public function store(Request $request)
     {
+
         $gitlink = $request->gitlink;
         $client = new Client();
         $response = $client->get('http://34.203.203.222/submit?git='.$gitlink);

@@ -20,7 +20,7 @@ class ExampleTest extends TestCase
     {
         $client = new Client();
 
-        $response = $client->get('http://34.203.203.222/submit?git=https://github.com/Shriyash26/laravel_hw1');
+        $response = $client->get('http://34.203.203.222/submit?git=https://github.com/GoJanhavi/user-auth-test-case.git');
         $this->assertEquals(200, $response->getStatusCode());
     }
 
@@ -28,7 +28,7 @@ class ExampleTest extends TestCase
     {
         $client = new Client();
 
-        $response = $client->get('http://34.203.203.222/submit?git=https://github.com/Shriyash26/laravel_hw1');
+        $response = $client->get('http://34.203.203.222/submit?git=https://github.com/GoJanhavi/user-auth-test-case.git');
         $this->assertNotEmpty($response->getBody());
     }
 }

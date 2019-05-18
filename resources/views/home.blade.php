@@ -1,6 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $(".submit").click(function(){
+                $(".process-test").css("display", "block");
+                $(".alert").css("display", "none");
+            });
+        });
+    </script>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -13,7 +22,7 @@
                         <div class="alt-row-group">
                             <div class="alt-row">
                                 <label class="col-3 font-weight-bold">Submission Status</label>
-                                <label class="col-8">Not Submitted</label>
+                                <label class="col-8 subStatus">Not Submitted</label>
                             </div>
                             <div class="alt-row">
                                 <label class="col-3 font-weight-bold">Grading Status</label>
@@ -25,18 +34,18 @@
                             </div>
                             <div class="alt-row">
                                 <label class="col-3 font-weight-bold">Last Modified</label>
-                                <label class="col-8">--</label>
+                                <label class="col-8 modStatus">--</label>
                             </div>
                             <div class="alt-row">
                                 <label class="col-3 font-weight-bold">GitHub Link</label>
-                                <input class="col-8 ml-3" type="text" name="gitlink" id="gitlink">
+                                <input class="col-8 ml-3" type="text" name="gitlink" id="gitlink"/>
                             </div>
                         </div>
                         <div class="col-12 text-center mt-3">
                             @if (Session::has('success'))
-                                <button type="submit" class="btn btn-primary">Re-Submit</button>
+                                <button class="submit" type="submit" class="btn btn-primary">Re-Submit</button>
                                 @else
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button class="submit" type="submit" class="btn btn-primary">Submit</button>
                             @endif
 
 
@@ -49,7 +58,7 @@
                                 $obj = (explode(" ",$json));
                             ?>
                             <div class="alert alert-info row mt-3">
-                                <h3 class="col-12">Test Results for submitted link</h3>
+
                                 <div class="col-4">
                                     <p>{{$obj[0]}}</p>
                                     <p>{{$obj[1]}}</p>
@@ -63,8 +72,11 @@
                                     <p>{{$obj[5]}}</p>
                                 </div>
                             </div>
+                                <div class="process-test alert-info"><p>Processing your code to run unit test, Please wait.</p><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
+                            @else
+
+                            <div class="process-test alert-info"><p>Processing your code to run unit test, Please wait.</p><div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div></div>
                         @endif
-                    </div>
 
                 </div>
             </div>
