@@ -39,8 +39,7 @@ class HomeController extends Controller
 
         $json = "Assertions".$result["Assertions"]." "."Errors".$result["Errors"]." "."Tests".$result["Tests"];
 
-       // return with('success', ['json' => $json]);
         return back()->with('success',$json);
-      //  return $json;
+
     }
 }
