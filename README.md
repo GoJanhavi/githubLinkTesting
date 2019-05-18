@@ -81,8 +81,12 @@ Setting up AWS EC2 Instance:
             'engine' => null,
         ],
     10.  Deploy updated file again and run the application.
+    
+--refer files ""server.py" and "testProject.sh" for aws part.
 
-
+###Collaborators: 
+    Janhavi Gokhale 
+    Shriyash Mahajan
  
 
 
